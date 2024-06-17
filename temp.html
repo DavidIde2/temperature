@@ -8,21 +8,18 @@
 
     Current Temperature:<span id="current_temp"></span>&deg; F<br>
     <br>
-    <button id="connectbutton" onclick = "start()">Refresh Data</button>
     <script type="text/javascript">
-        function start(objButton) {
-            var deviceID = "370028000d47313037363132";
-            var accessToken = "44893281e323ac55b41410f80b5a01fc63380591";
-            var baseURL = "https://api.particle.io/v1/devices/"
-            var varName = "tempF"; // your cloud variable name goes here
+    var deviceID = "370028000d47313037363132";
+    var accessToken = "44893281e323ac55b41410f80b5a01fc63380591";
+    var baseURL = "https://api.particle.io/v1/devices/"
+    var varName = "tempF"; // your cloud variable name goes here
 
 
-            requestURL = baseURL + deviceID + "/" + varName + "/?access_token=" + accessToken;
-            $.getJSON(requestURL, function(json) {
-                     document.getElementById("current_temp").innerHTML = json.result;
-                     });
-   
-        }
+    requestURL = baseURL + deviceID + "/" + varName + "/?access_token=" + accessToken;
+    $.getJSON(requestURL, function(json) {
+                document.getElementById("current_temp").innerHTML = json.result;
+                });
+
     </script>
 </body>
 </html>
